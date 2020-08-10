@@ -6,6 +6,27 @@
 ## 需求
 根据spec/practice_*/README.md中的需求编写代码，使得测试代码可以运行通过。
 
+## 例子
+
+比如要实现practice_1的需求
+
+在src/practice_1下新建一个person.js
+
+然后进行如下编码
+```
+class Person {
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
+    }
+    introduce(){
+        return "My name is "+this.name+". I am "+this.age+" years old.";
+    }
+}
+export default Person;
+```
+
+
 ## 挑战
 * 理解构造器
 * 理解封装
