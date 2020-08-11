@@ -3,10 +3,9 @@ import chai from "chai";
 import sinonChai from "sinon-chai";
 const expect = chai.expect;
 chai.use(sinonChai);
-import Person from "../../src/practice_5/person.js";
-import Student from "../../src/practice_5/student.js";
-import Worker from "../../src/practice_5/worker.js";
 
+import Person from "../../src/practice_2/person.js";
+import Student from "../../src/practice_2/student.js";
 
 describe("Person", () => {
     it("should have field name and age", () => {
@@ -29,24 +28,10 @@ describe("Person", () => {
             expect(student.klass).to.equal(2);
         });
 
-        it("should overwrite Person introduce, introduce with name, age and class number", () => {
+        it("should overwrite Person introduce, introduce student with class", () => {
             const student = new Student("Tom", 21, 2);
             const introduce = student.introduce();
-            expect(introduce).to.equal("My name is Tom. I am 21 years old. I am a Student. I am at Class 2.");
+            expect(introduce).to.equal("I am a Student. I am at Class 2.");
         });
-    });
-
-    describe("Worker", () => {
-        it("should have field name, age", () => {
-            const worker = new Worker("Tom", 21);
-            expect(worker.name).to.equal("Tom");
-            expect(worker.age).to.equal(21);
-        });
-
-        it("should overwrite Person introduce, introduce with name and age, but different with Person introduce", () => {
-            const worker = new Worker("Tom", 21);
-            const introduce = worker.introduce();
-            expect(introduce).to.equal("My name is Tom. I am 21 years old. I am a Teacher. I have a job.");
-        });
-    });
+    })
 });
